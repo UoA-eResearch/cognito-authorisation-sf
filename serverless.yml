@@ -6,8 +6,9 @@ service: cognito-authorisation-sf
 # sls deploy --API_ID '5ascspst9skjakf8d41pglpkis' --NEEDED_GROUP_MEMBERSHIP 'test_group.ec|Employee.psrwi'
 
 custom:
-  APP_ID:
-  NEEDED_GROUP_MEMBERSHIP:
+  APP_ID:                              # Example: 5ascspst9skjakf8d41pglpkis
+  NEEDED_GROUP_MEMBERSHIP:             # Example: test_group.ec|Employee.psrwi
+
 # ---------------------------------------------------------- #
 
 provider:
