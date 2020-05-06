@@ -1,0 +1,33 @@
+service: cognito-authorisation-sf
+
+# -------- Enter your app ID and allowed groups here ------- #
+
+# Alterantively these can be passed as CLI arguments with the command:
+# sls deploy --API_ID '5ascspst9skjakf8d41pglpkis' --NEEDED_GROUP_MEMBERSHIP 'test_group.ec|Employee.psrwi'
+
+custom:
+  APP_ID:
+  NEEDED_GROUP_MEMBERSHIP:
+# ---------------------------------------------------------- #
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-southeast-2
+  endpointType: regional
+  role: arn:aws:iam::416527880812:role/lambda_basic_execution
+  environment:
+    APP_ID: ${self:custom.APP_ID, opt:APP_ID}
+    NEEDED_GROUP_MEMBERSHIP: ${self:custom.NEEDED_GROUP_MEMBERSHIP, opt:NEEDED_GROUP_MEMBERSHIP}
+package:
+  exclude:
+    - .git/**
+    - node_modules/**
+functions:
+  auth:
+    name: cognito-authorisation-${self:provider.environment.APP_ID}
+    handler: handler.auth
+    events:
+      - http:
+          path: /
+          method: get

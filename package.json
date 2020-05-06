@@ -1,0 +1,20 @@
+{
+  "name": "app-client-specific-lambda-sf",
+  "version": "1.0.0",
+  "description": "Serverless Framework version of the app-client-specific-lambda Lambda function used to restrict Cognito login to a list of allowed groups.",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Lambda",
+    "Cognito",
+    "Serverless",
+    "Framework"
+  ],
+  "author": "Sam Kavanagh (tofu.dev)",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless": "^1.68.0"
+  }
+}
