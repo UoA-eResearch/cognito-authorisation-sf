@@ -15,6 +15,6 @@
   "author": "Sam Kavanagh (tofu.dev)",
   "license": "ISC",
   "devDependencies": {
-    "serverless": "^4.39.0"
+    "serverless": "^4.46.0"
   }
 }
